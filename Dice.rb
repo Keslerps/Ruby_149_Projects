@@ -1,26 +1,33 @@
 class Dice
-    def initialize()
-        @first = 1 + rand(6) 
-        @second = 1 + rand(6)
+    def initialize(first = nil, second = nil)
+        if (first == nil)
+            @first = 1 + rand(6)
+        else
+            @first = first
+        end
+        if (second == nil)
+            @second = 1 + rand(6)
+        else
+            @second = first
+        end
     end
-    def initialize(first, second)
-        @first = first
-        @second = second
-    end
-    def addValues()
-        first + second
+    def addValues
+        @first + @second
     end
     def countValues(value)
         count = 0
         if (@first == value)
-            count++
+            count += 1
+        end
         if (@second == value)
-            count++
-        return count
-    def getFirst()
+            count += 1
+        end
+        return count 
+    end
+    def getFirst
         @first
     end
-    def getSecond()
+    def getSecond
         @second
     end
 end

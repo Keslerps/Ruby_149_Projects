@@ -1,4 +1,4 @@
-require 'Dice'
+require_relative 'Dice'
 
 class Roulette
     

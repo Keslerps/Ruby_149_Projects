@@ -1,5 +1,5 @@
-require 'Dice'
-require 'Roulette'
+require_relative 'Dice'
+require_relative 'Roulette'
 
 def oneBet()
     dice = Dice.new
@@ -13,8 +13,8 @@ def oneBet()
     bet = gets.to_i
     puts "How Much would you like to bet?"
     betAmount = gets.to_i
-    printf ("You rolled: %d %d", dice.getFirst, dice.getSecond)
-    payout = Roulette.payout(dice, betType, betAmount)
+    printf("You rolled: %d %d\n", dice.getFirst, dice.getSecond)
+    payout = Roulette.payout(dice, bet, betAmount)
 
     if payout <= 0
         puts "Better Luck next time!"
